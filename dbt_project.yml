@@ -3,7 +3,7 @@ version: '1.0.0'
 config-version: 2
 
 # This matches the profile name in your profiles.yml
-profile: 'default'
+profile: 'banking_project'
 
 # Directories where dbt looks for different file types
 model-paths: ["models"]
