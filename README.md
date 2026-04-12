@@ -11,7 +11,7 @@ The project follows the **Medallion Architecture** to ensure data quality and se
 - **Silver (Intermediate):** High-level business logic and behavioral filtering.
 - **Gold (Marts):** Production-ready tables optimized for BI tools and ROI analysis.
 
-![Airflow DAG Lineage Proof](snapshots\airflow_dag_lineage.png)
+![Airflow DAG Lineage Proof](snapshots/airflow_dag_lineage.png)
 *Figure 1: Airflow DAG Lineage rendered by Cosmos, showing task groups and execution dependencies.*
 
 ## 🚀 Components
@@ -28,7 +28,7 @@ The project follows the **Medallion Architecture** to ensure data quality and se
 ### 3. Transformation (`/models`)
 The pipeline structure is managed as a Directed Acyclic Graph (DAG). While the UI simplifies the view into task groups, the project contains **13 total nodes** (5 models, 6 tests, and 2 sources) identified during parsing.
 
-![dbt Model Lineage Graph](snapshots\conversion_stream_pipeline_lineage_graph.png)
+![dbt Model Lineage Graph](snapshots/conversion_stream_pipeline_lineage_graph.png)
 *Figure 2: Grid view showing successful state across the pipeline stages.*
 
 - **Staging:** Renames fields and enforces **Core Integrity Tests** (Unique, Not_Null).
@@ -103,8 +103,8 @@ docker exec -it <container_id> pip install apache-airflow-providers-snowflake
 
 ### Execution Success
 Full proof of a successful run. Note the 5 "Created Asset Events" representing the physical creation of staging, intermediate, and mart datasets in Snowflake.
-![Successful Run](snapshots\successful_run.png)
+![Successful Run](snapshots/successful_run.png)
 
 ### Snowflake Infrastructure Configuration
  Documented configuration of the Snowflake connection used to bridge Airflow and the Data Warehouse (Account ID redacted for security).
-![Snowflake Connection Configuration](snapshots\snowflake_connection_configuration.png)
+![Snowflake Connection Configuration](snapshots/snowflake_connection_configuration.png)
