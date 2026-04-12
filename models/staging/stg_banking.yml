@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: landing
+    database: RAW_ZONE
+    schema: LANDING
+    tables:
+      - name: stg_web_events
+        columns:
+          - name: USER_ID
+            tests:
+              - not_null
+      - name: stg_crm_conversions
+        columns:
+          - name: CONV_ID
+            tests:
+              - not_null
+              - unique
+          - name: USER_ID
+            tests:
+              - not_null

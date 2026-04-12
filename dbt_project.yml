@@ -1,0 +1,38 @@
+name: 'conversion_stream_pipeline'
+version: '1.0.0'
+config-version: 2
+
+# This matches the profile name in your profiles.yml
+profile: 'default'
+
+# Directories where dbt looks for different file types
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# ---------------------------------------------------------------
+# Model Configurations
+# ---------------------------------------------------------------
+models:
+  conversion_stream_pipeline:
+    # 1. Staging Layer: Lightweight views for cleaning raw data
+    staging:
+      +materialized: view
+      +schema: staging
+
+    # 2. Intermediate Layer: Complex logic, finding lost leads
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+
+    # 3. Marts Layer: Final business tables for ROI and reporting
+    marts:
+      +materialized: table
+      +schema: analytics
