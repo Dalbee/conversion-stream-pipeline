@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fct_banking_conversions
+    description: "Final fact table for banking conversion metrics. Used by Marketing for ROAS calculations."
+    columns:
+      - name: channel
+        tests:
+          - not_null
+      - name: conversion_rate_pct
+        tests:
+          - not_null
+
+  - name: mart_marketing_roi
+    description: "Financial breakdown of marketing channels based on conversion value."
+    columns:
+      - name: estimated_revenue_usd
+        description: "Total conversions multiplied by the €50 average customer value."
