@@ -1,0 +1,13 @@
+banking_project:
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOW_ACCT') }}"
+      user: "{{ env_var('SNOW_USER') }}"
+      password: "{{ env_var('SNOW_PASS') }}"
+      role: ACCOUNTADMIN # My asigned role
+      database: "{{ env_var('SNOW_DB') }}"
+      warehouse: "{{ env_var('SNOW_WH') }}"
+      schema: STAGING # We'll write to STAGING, reading from LANDING
+      threads: 4
+  target: dev

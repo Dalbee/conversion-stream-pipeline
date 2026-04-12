@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  airflow-dbt:
+    image: conversion-pipeline
+    container_name: conversion-stream-pipeline-airflow-dbt-1
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/usr/app
+      - ./dags:/root/airflow/dags
+    env_file:
+      - .env
+    environment:
+      - DBT_PROFILES_DIR=/usr/app
+      - DBT_PROJECT_DIR=/usr/app
+      
+      # --- CRITICAL TIMEOUT FIXES ---
+      - AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT=300
+      - AIRFLOW__CORE__DAG_FILE_PROCESSOR_TIMEOUT=300
+      
+      # Airflow Core Logic
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      
+      # --- LOGIN CREDENTIALS ---
+      - AIRFLOW__AUTH_MANAGER__COMMON__ADMIN_USERNAME=admin
+      - AIRFLOW__AUTH_MANAGER__COMMON__ADMIN_PASSWORD=admin
+      - AIRFLOW__DB_MANAGER__CREATE_ADMIN_ON_STARTUP=True
+      - AIRFLOW__DB_MANAGER__ADMIN_USERNAME=admin
+      - AIRFLOW__DB_MANAGER__ADMIN_PASSWORD=admin
+      
+    command: airflow standalone
