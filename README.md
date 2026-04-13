@@ -41,6 +41,8 @@ The **Channel Performance & Marketing Alpha Dashboard** transforms the Gold-laye
 ![Power BI Dashboard Overview](snapshots/power_bi_dashboard_overview.png)
 *Figure 3: Final Executive Dashboard featuring the ROI KPI ribbon and Strategic Narrative.*
 
+[Click to View Real-Time Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGRjNzIyNTgtY2Q1NC00YmI0LThiNjMtOGI0MzRmMTRjYzNmIiwidCI6Ijk1N2VlNTFkLWZkOTktNGNjZC1iOGUxLTZlMDE0MjE3NzM3ZiIsImMiOjh9)
+
 - **Executive KPI Ribbon:** Real-time tracking of Revenue, Conversion Rates, and Revenue Per Click.
 - **Channel Efficiency Matrix:** A 4-quadrant scatter plot that categorizes channels into **Stars, Cash Cows, Hidden Gems, and Underperformers**.
 - **Strategic Channel Insights:** A dynamic, DAX-driven narrative engine that interprets current filters to provide automated strategic recommendations.
