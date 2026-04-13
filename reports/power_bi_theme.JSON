@@ -1,0 +1,37 @@
+{
+    "name": "Nordea Professional",
+    "dataColors": [
+        "#0000A0", 
+        "#009BDE", 
+        "#24C8C8", 
+        "#002855", 
+        "#E5F3FB", 
+        "#606060", 
+        "#999999", 
+        "#B3B3B3"
+    ],
+    "background": "#FFFFFF",
+    "foreground": "#0000A0",
+    "tableAccent": "#0000A0",
+    "visualStyles": {
+        "*": {
+            "*": {
+                "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+                "border": [{ "show": false }],
+                "title": [{ "show": true, "fontColor": { "solid": { "color": "#0000A0" } }, "fontSize": 12, "fontFamily": "Segoe UI Semibold" }],
+                "headerIcons": [{ "iconColor": { "solid": { "color": "#0000A0" } } }]
+            }
+        },
+        "page": {
+            "*": {
+                "background": [{ "color": { "solid": { "color": "#F4F7F9" } }, "transparency": 0 }]
+            }
+        },
+        "card": {
+            "*": {
+                "labels": [{ "color": { "solid": { "color": "#009BDE" } }, "fontSize": 25 }],
+                "categoryLabels": [{ "color": { "solid": { "color": "#606060" } }, "fontSize": 10 }]
+            }
+        }
+    }
+}
